@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body dir="rtl">
+        <table width="50%">
+            {% for item in show%}
+                {% if forloop.counter0|divisibleby:"3"%}
+                    <tr>
+                {%endif%}
+                        <td width="30%">
+                            {% include 'app/components/list_box.html' with list=item%}
+                        </td>
+                {% if forloop.counter0|divisibleby:"3"%}
+                    </tr>
+                {%endif%}
+            {%endfor%}
+        </table>
+    </body>
+</html>
